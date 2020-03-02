@@ -22,6 +22,7 @@ int main(){
 	
 	findColSum(dPtr,result,N,M); 
 	showData(result,1,M);
+	cout << "\n";
 }
 
 //Write definition of randData(), showData() and findColSum()
