@@ -29,20 +29,22 @@ int main(){
 void randData(double *dPtr,int N,int M){
 	for(int i=0;i<N;i++){
 		for(int j=0;j<M;j++){
-			*(dPtr+i) = (rand()%100)/100;
+			*(dPtr+i) = rand()%100;
 		}
 	}
 }
 void findRowSum(const double *dPtr,double *result,int N,int M){
 	for(int i=0;i<N;i++){
 		for(int j=0;j<M;j++){
-			result[i] += dPtr[j]; 
+			result[i] += *(dPtr+j); 
 		}
 	}
 }
-void showData(double *result,int N,int M){
+void showData(double *array,int N,int M){
 	for(int i=0;i<N;i++){
-		cout << result[i] << "\n";
+		for(int j=0;j<M;j++){
+			cout << *(array+j) << " ";
+		}
+		cout << "\n";
 	}
-
 }
