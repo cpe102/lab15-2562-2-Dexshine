@@ -33,13 +33,20 @@ void randData(double *dPtr,int N,int M){
 	}
 }
 void findColSum(const double *dPtr,double *result,int N,int M){
-	
+	for(int j=0;j<M;j++){
+		int p = 0;
+		for(int i=0;i<N;i++){
+			result[j] += *(dPtr+j+p+i);
+			p += 6;
+		}
+	}
 }
 void showData(double *array,int N,int M){
 	int p = 0;
 	for(int i=0;i<N;i++){
 		for(int j=0;j<M;j++){
-			cout << *(array+p) << " ";
+			cout.width(4);
+			cout << left << *(array+p) << "  ";
 			p++;
 		}
 		cout << "\n";
